@@ -1,0 +1,2 @@
+// Persistence vs Durability in AMQP
+https://asafdav2.github.io/2017/rabbit-mq-persistentcy-vs-durability/
