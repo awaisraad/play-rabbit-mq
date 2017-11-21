@@ -15,7 +15,7 @@ async function main() {
     // producer publishes log to `logs` exchange
     ch.publish('logs', '', Buffer.from(LOG_MESSAGE))
     console.log('Publish |', LOG_MESSAGE)
-  }, 5)
+  }, 20)
 }
 
 function getRandomLogMessage() {
