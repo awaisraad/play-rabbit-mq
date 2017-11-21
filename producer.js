@@ -1,11 +1,11 @@
-const ampq = require('amqplib')
+const amqp = require('amqplib')
 const sleep = require('./sleep')
 
 // constants
 const QUEUE_NAME = "J_RABBIT_MQ"
 
 async function main() {
-  const connection = await ampq.connect('amqp://localhost')
+  const connection = await amqp.connect('amqp://localhost')
   const ch = await connection.createChannel();
   const message = `Hello Rabbit! -${Date.now()}`;
 
