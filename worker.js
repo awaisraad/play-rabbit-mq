@@ -11,7 +11,11 @@ async function main() {
   ch
     .consume(QUEUE_NAME, async  msg => {
       console.log(msg.content.toString())
-    })
+      await sleep(10 * 1000)
+
+      ch.ack(msg)
+    },
+    { noAck: false })
 }
 
 main().catch(console.error)
