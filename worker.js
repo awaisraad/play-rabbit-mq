@@ -10,14 +10,7 @@ async function main() {
 
   ch
     .consume(QUEUE_NAME, async  msg => {
-
       console.log(msg.content.toString())
-
-      // send acknowledge when done
-      console.log('Sending ack')
-      ch.ack(msg)
-    }, {
-      ack: false  // do not acknowledge by default
     })
 }
 
