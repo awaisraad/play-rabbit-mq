@@ -2,6 +2,8 @@ const amqp = require('amqplib')
 const sleep = require('../sleep')
 const Exchange = require('./exchange')
 
+const interval = Number(process.argv[2]) * 1000
+
 const SAMPLE_LOGS = {
   ERROR: [
     'IMAGE_CONVERTER_CRASHED',
@@ -55,6 +57,4 @@ function generateRandomLogMessage() {
   }
 }
 
-const interval = Number(process.argv[2])
-
-main().catch(console.error)
+main(interval).catch(console.error)
