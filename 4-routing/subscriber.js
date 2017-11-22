@@ -40,7 +40,7 @@ function printColoredLog(message) {
     case 'ERROR': return console.log(chalk.red(message))
     case 'WARNING': return console.log(chalk.yellow(message))
     case 'INFO': return console.log(chalk.green(message))
-
+    
     default: return console.log(chalk.grey(message))
   }
 }

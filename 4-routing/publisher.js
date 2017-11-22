@@ -36,7 +36,7 @@ async function main(interval = 1000) {
     console.log(log)
 
     const topic = log.type
-    ch.publish(Exchange.name, topic, Buffer.from(log.message))
+    ch.publish(Exchange.name, topic, Buffer.from(log.message), { expiration: 10 * 1000})
   }
 
   setInterval(publishLogToExchange, interval)
