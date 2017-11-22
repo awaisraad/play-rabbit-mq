@@ -1,5 +1,6 @@
 const amqp = require('amqplib')
 const Exchange = require('./exchange')
+const sleep = require('../sleep')
 
 if (process.argv.length === 2) {
   help()
@@ -27,7 +28,7 @@ async function main() {
 }
 
 function help() {
-  console.log('Usage', 'node publisher.js <key> ... <key>')
+  console.log('Usage', 'node subscriber.js <key> ... <key>')
   console.log('Example:')
   console.log('node publisher.js \'error.*\' \'info.*\'')
 }
